@@ -21,8 +21,9 @@
     # Nix Ld https://github.com/Mic92/nix-ld
     inputs.nix-ld.nixosModules.nix-ld
 
-    # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ./desktop
+    ./services
   ];
 
   nixpkgs = {

@@ -17,7 +17,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./programs
-  ];
+  ] ++ (builtins.attrValues outputs.homeManagerModules);
 
   nixpkgs = {
     overlays = [
@@ -49,6 +49,7 @@
     unstable.discord
     unstable.vscode
     unstable.libreoffice-fresh
+    unstable.steam
     
     # Fonts
     noto-fonts
@@ -61,7 +62,11 @@
   fonts.fontconfig.enable = true;
 
   programs.home-manager.enable = true;
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    userName  = "ChristianHardin";
+    userEmail = "christianhardin12345@gmail.com";
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
