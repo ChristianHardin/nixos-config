@@ -23,7 +23,7 @@
     overlays = [
       outputs.overlays.additions
       outputs.overlays.modifications
-      outputs.overlays.unstable-packages
+      # outputs.overlays.unstable-packages
     ];
     config = {
       allowUnfree = true;
@@ -43,13 +43,13 @@
     thunderbird
     bat
     libsForQt5.yakuake
-
-    # Unstable
-    unstable.exa
-    unstable.discord
-    unstable.vscode
-    unstable.libreoffice-fresh
-    unstable.steam
+    eza
+    discord
+    vscode
+    libreoffice-fresh
+    steam
+    bottles
+    wineWowPackages.waylandFull
     
     # Fonts
     noto-fonts
