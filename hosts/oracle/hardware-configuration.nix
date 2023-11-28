@@ -23,7 +23,7 @@
       fsType = "vfat";
     };
 
-  fileSystems."/persistent" =
+  fileSystems."/home/herman/Games/persistent" =
     { device = "/dev/disk/by-uuid/b7fbd37a-7044-48fe-b820-9abff6ebe7ad";
       fsType = "ext4";
     };
