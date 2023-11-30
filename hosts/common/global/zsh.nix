@@ -1,4 +1,7 @@
-{ ... }:
+{ config, ... }:
+let 
+  hostName = config.networking.hostName;
+in 
 {
   programs.zsh = {
     enable = true;
@@ -9,9 +12,9 @@
       ll = "ls -l";
       cat = "bat";
       ls = "eza";
-      update = "sudo nixos-rebuild switch --flake /home/herman/Documents/nix-config/#oracle && home-manager switch --flake /home/herman/Documents/nix-config/#herman@oracle";
-      update-config = "sudo nixos-rebuild switch --flake /home/herman/Documents/nix-config/#oracle";
-      update-home = "home-manager switch --flake /home/herman/Documents/nix-config/#herman@oracle";
+      update = "sudo nixos-rebuild switch --flake /home/herman/Documents/nix-config/#${hostName} && home-manager switch --flake /home/herman/Documents/nix-config/#herman@${hostName}";
+      update-config = "sudo nixos-rebuild switch --flake /home/herman/Documents/nix-config/#${hostName}";
+      update-home = "home-manager switch --flake /home/herman/Documents/nix-config/#herman@${hostName}";
     };
     ohMyZsh = {
       enable = true;
