@@ -48,16 +48,13 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      # Desktop
-      # oracle = nixpkgs.lib.nixosSystem {
-      #   specialArgs = {inherit inputs outputs;};
-      #   modules = [
-      #     ./nixos/configuration.nix
-      #   ];
-      # };
-
       oracle =  lib.nixosSystem {
         modules = [ ./hosts/oracle ];
+        specialArgs = { inherit inputs outputs; };
+      };
+
+      cauldron =  lib.nixosSystem {
+        modules = [ ./hosts/cauldron ];
         specialArgs = { inherit inputs outputs; };
       };
     };
@@ -65,15 +62,14 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
-      # "herman@oracle" = home-manager.lib.homeManagerConfiguration {
-      #   pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      #   extraSpecialArgs = {inherit inputs outputs;};
-      #   modules = [
-      #     ./home-manager/home.nix
-      #   ];
-      # };
       "herman@oracle" = lib.homeManagerConfiguration {
         modules = [ ./home/herman/oracle.nix ];
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
+
+      "herman@cauldron" = lib.homeManagerConfiguration {
+        modules = [ ./home/herman/cauldron.nix ];
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
       };

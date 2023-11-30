@@ -17,7 +17,7 @@ in
       "git"
     ];
     openssh.authorizedKeys.keys = [
-      # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFNN3wdKSwzvtVE2Y4My3UI5KgNrJnU6GVz0kJ+m7WgX christianhardin12345@gmail.com"
     ];
     packages = [ pkgs.home-manager ];
   };
