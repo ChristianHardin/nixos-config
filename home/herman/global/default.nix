@@ -56,7 +56,9 @@
     wineWowPackages.waylandFull
     p7zip
     unrar
-    
+    mpv
+    moonlight-qt
+
     # Fonts
     noto-fonts
     noto-fonts-cjk

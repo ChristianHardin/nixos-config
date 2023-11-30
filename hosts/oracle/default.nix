@@ -17,6 +17,8 @@
     ../common/optional/pipewire.nix
     ../common/optional/spotifyd.nix
     ../common/optional/networkmanager.nix
+    ../common/optional/virt-manager.nix
+    ../common/optional/mongodb.nix
   ];
 
   networking = {
