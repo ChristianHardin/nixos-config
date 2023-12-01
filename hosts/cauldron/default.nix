@@ -3,6 +3,7 @@
   imports = [
     # Nixos Hardware https://github.com/NixOS/nixos-hardware/tree/master
     inputs.hardware.nixosModules.dell-xps-15-9510
+    # inputs.hardware.nixosModules.dell-xps-15-9510-nvidia
     inputs.hardware.nixosModules.common-gpu-nvidia-disable
 
     # Nix Ld https://github.com/Mic92/nix-ld
@@ -18,6 +19,7 @@
     ../common/optional/pipewire.nix
     ../common/optional/spotifyd.nix
     ../common/optional/networkmanager.nix
+    ../common/optional/opengl.nix
   ];
 
   networking = {

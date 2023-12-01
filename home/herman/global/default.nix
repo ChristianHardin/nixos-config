@@ -51,7 +51,6 @@
     discord
     vscode
     libreoffice-fresh
-    steam
     bottles
     wineWowPackages.waylandFull
     p7zip
