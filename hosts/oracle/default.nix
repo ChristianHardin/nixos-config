@@ -19,6 +19,7 @@
     ../common/optional/networkmanager.nix
     ../common/optional/virt-manager.nix
     ../common/optional/mongodb.nix
+    ../common/optional/mysql.nix
   ];
 
   networking = {
