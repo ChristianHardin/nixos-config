@@ -44,7 +44,7 @@
     # firefox 
     bitwarden
     nextcloud-client
-    thunderbird
+    # thunderbird
     bat
     libsForQt5.yakuake
     eza
