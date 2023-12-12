@@ -12,6 +12,7 @@
     ../common/global
     ../common/users/herman
     ../common/desktop/plasma
+    ../common/desktop/flatpak
     ../common/optional/systemd-boot.nix
     ../common/optional/sddm.nix
     ../common/optional/pipewire.nix

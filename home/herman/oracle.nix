@@ -5,10 +5,6 @@
     ./features/cli
   ];
 
-  home.packages = with pkgs; [ 
-    dbeaver
-  ];
-
   monitors = [
     {
       name = "DP-2";

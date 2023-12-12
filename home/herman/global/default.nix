@@ -41,22 +41,23 @@
   };
 
   home.packages = with pkgs; [ 
-    firefox 
+    # firefox 
     bitwarden
     nextcloud-client
     thunderbird
     bat
     libsForQt5.yakuake
     eza
-    discord
+    # discord
     vscode
-    libreoffice-fresh
-    bottles
+    # libreoffice-fresh
+    # hunspell # Spellcheck for libreoffice
+    # bottles
     wineWowPackages.waylandFull
     p7zip
     unrar
     mpv
-    moonlight-qt
+    # moonlight-qt
 
     # Fonts
     noto-fonts
