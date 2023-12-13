@@ -9,6 +9,8 @@ let
       libpng
       libpulseaudio
       libvorbis
+      libgdiplus
+      gperftools
       stdenv.cc.cc.lib
       libkrb5
       keyutils

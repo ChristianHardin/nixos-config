@@ -31,6 +31,7 @@
     adb.enable = true;
     dconf.enable = true;
     kdeconnect.enable = true;
+    gamemode.enable = true;
   };
 
   hardware.opengl.enable = true;

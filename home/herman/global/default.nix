@@ -40,24 +40,26 @@
     };
   };
 
+  # FLATPAK
+  # firefox 
+  # thunderbird
+  # discord
+  # libreoffice-fresh
+  # bottles
+  # moonlight-qt
+
   home.packages = with pkgs; [ 
-    # firefox 
     bitwarden
     nextcloud-client
-    # thunderbird
     bat
     libsForQt5.yakuake
     eza
-    # discord
     vscode
-    # libreoffice-fresh
-    # hunspell # Spellcheck for libreoffice
-    # bottles
     wineWowPackages.waylandFull
     p7zip
     unrar
     mpv
-    # moonlight-qt
+    protontricks
 
     # Fonts
     noto-fonts
