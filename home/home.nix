@@ -22,7 +22,7 @@
   programs.git = {
     enable = true;
     userName = "Christian A-H";
-    userEmail = "business@christianhardin.com";
+    userEmail = "contact@christianhardin.com";
   };
 
   programs.bash = {
