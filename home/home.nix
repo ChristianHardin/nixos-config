@@ -16,6 +16,7 @@
     homeDirectory = "/home/herman";
     packages = with pkgs; [
       scanmem
+      devenv
     ];
   };
 
