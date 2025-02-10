@@ -24,6 +24,7 @@
     "org.libreoffice.LibreOffice"
     "com.github.Matoking.protontricks"
     "org.gimp.GIMP"
+    "org.kde.okular"
   ];
 in {
   imports = [./steam-devices.nix];
