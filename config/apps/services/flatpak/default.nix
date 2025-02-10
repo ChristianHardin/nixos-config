@@ -23,6 +23,7 @@
     "com.heroicgameslauncher.hgl"
     "org.libreoffice.LibreOffice"
     "com.github.Matoking.protontricks"
+    "org.gimp.GIMP"
   ];
 in {
   imports = [./steam-devices.nix];
