@@ -42,12 +42,12 @@ in {
       installedFlatpaks=$(${pkgs.flatpak}/bin/flatpak list --app --columns=application)
 
       # 4. Remove any Flatpaks that are NOT in the desired list
-      for installed in $installedFlatpaks; do
-        if ! echo ${toString desiredFlatpaks} | ${grep}/bin/grep -q $installed; then
-          echo "Removing $installed because it's not in the desiredFlatpaks list."
-          ${pkgs.flatpak}/bin/flatpak uninstall -y --noninteractive $installed
-        fi
-      done
+      #for installed in $installedFlatpaks; do
+      #  if ! echo ${toString desiredFlatpaks} | ${grep}/bin/grep -q $installed; then
+      #    echo "Removing $installed because it's not in the desiredFlatpaks list."
+      #    ${pkgs.flatpak}/bin/flatpak uninstall -y --noninteractive $installed
+      #  fi
+      #done
 
       # 5. Install or re-install the Flatpaks you DO want
       for app in ${toString desiredFlatpaks}; do
