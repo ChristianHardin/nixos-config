@@ -33,4 +33,6 @@
       Experimental = true;
     };
   };
+
+  programs.dconf.enable = true;
 }
