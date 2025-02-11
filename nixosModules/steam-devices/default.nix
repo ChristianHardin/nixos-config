@@ -1,7 +1,17 @@
-# Steam Devices
-# https://github.com/ValveSoftware/steam-devices
-{...}: {
-  services.udev.extraRules = ''
+{
+	config,
+	lib,
+	pkgs,
+	...
+}: 
+{
+	options = {
+		steam-devices.enable =
+			lib.mkEnableOptions "enable steam-devices";
+	}; 
+
+	config = lib.mkIf config.flatpak.enable {
+services.udev.extraRules = ''
     # Valve USB devices
     SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", MODE="0660", TAG+="uaccess"
 
@@ -170,4 +180,5 @@
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="28de", ATTRS{idProduct}=="2301", MODE="0660", TAG+="uaccess"
     SUBSYSTEM=="tty", ATTRS{idVendor}=="28de", ATTRS{idProduct}=="2102", MODE="0660", TAG+="uaccess"
   '';
+	};
 }
