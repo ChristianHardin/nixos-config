@@ -7,7 +7,7 @@
 {
 	options = {
 		steam-devices.enable =
-			lib.mkEnableOptions "enable steam-devices";
+			lib.mkEnableOption "enable steam-devices";
 	}; 
 
 	config = lib.mkIf config.flatpak.enable {
