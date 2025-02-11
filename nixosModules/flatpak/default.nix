@@ -64,9 +64,9 @@ in {
         # 6. Update all installed Flatpaks
         ${pkgs.flatpak}/bin/flatpak update -y
       '';
+      };
 
-
-  services.udev.extrarules = ''
+services.udev.extrarules = ''
     # valve usb devices
     subsystem=="usb", attrs{idvendor}=="28de", mode="0660", tag+="uaccess"
 
@@ -235,6 +235,6 @@ in {
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="28de", ATTRS{idProduct}=="2301", MODE="0660", TAG+="uaccess"
     SUBSYSTEM=="tty", ATTRS{idVendor}=="28de", ATTRS{idProduct}=="2102", MODE="0660", TAG+="uaccess"
   '';
-    };
+
   };
 }
