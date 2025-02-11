@@ -23,7 +23,6 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
-    sops-nix,
     home-manager,
     alejandra,
     ...

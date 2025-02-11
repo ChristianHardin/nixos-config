@@ -1,7 +1,6 @@
-{...}: 
-{
-	imports = [
-		./desktop/plasma
-		./apps	
-	];
+{...}: {
+  imports = [
+    ./desktop/plasma
+    ./apps
+  ];
 }
