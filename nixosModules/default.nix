@@ -11,4 +11,5 @@
   ];
 
   flatpak.enable = lib.mkDefault true;
+  steam-devices.enable = lib.mkDefault false;
 }
