@@ -46,7 +46,7 @@
       modules = [
         # Default Config
         ./hosts/oracle/configuration.nix
-        ./modules
+        ./nixosModules
 
         # Home Manager
         home-manager.nixosModules.home-manager
