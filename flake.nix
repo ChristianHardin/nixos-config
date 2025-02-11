@@ -5,11 +5,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/master";
 
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -50,17 +45,15 @@
       };
       modules = [
         # Default Config
-        ./config/configuration.nix
-
-        # Sops
-        sops-nix.nixosModules.sops
+        ./hosts/oracle/configuration.nix
+        ./modules
 
         # Home Manager
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.herman = import ./home/home.nix;
+          home-manager.users.herman = import ./hosts/oracle/home.nix;
         }
 
         # Formatting
