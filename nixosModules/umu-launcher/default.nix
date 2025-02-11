@@ -1,6 +1,8 @@
 {
   inputs,
   pkgs,
+  lib,
+  config,
   ...
 }: let
   inherit (pkgs.stdenv.hostPlatform) system;
@@ -10,5 +12,12 @@
     cbor2 = true;
   };
 in {
-  environment.systemPackages = [umu];
+  options = {
+    umu-launcher.enable =
+      lib.mkEnableOption "enable umu-launcher";
+  };
+
+  config = lib.mkIf config.umu-launcher.enable {
+    environment.systemPackages = [umu];
+  };
 }

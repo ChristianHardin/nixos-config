@@ -7,7 +7,9 @@
   imports = [
     ./hardware-configuration.nix
   ];
+
   steam-devices.enable = true;
+  umu-launcher.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   programs.nix-ld.enable = true; # tmp
