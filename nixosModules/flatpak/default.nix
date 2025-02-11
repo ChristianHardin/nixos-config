@@ -30,8 +30,8 @@ in {
       lib.mkEnableOption "enables flatpak";
   };
 
-  # imports = [./steam-devices.nix];
   config = lib.mkIf config.flatpak.enable {
+  	imports = [./steam-devices.nix];
     services.flatpak.enable = true;
     xdg.portal.enable = true;
     xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
