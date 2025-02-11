@@ -2,7 +2,6 @@
   imports = [
     ./fonts
     ./programs
-    ./services
     ./virtualization
   ];
 
