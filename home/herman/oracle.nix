@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   imports = [];
@@ -17,6 +18,7 @@
     packages = with pkgs; [
       scanmem
       devenv
+      pkgs-unstable.ladybird
     ];
   };
 
