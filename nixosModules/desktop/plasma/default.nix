@@ -22,6 +22,7 @@
     plasma-browser-integration
     oxygen
     okular
+    elisa
   ];
 
   # Enable and power on bluetooth

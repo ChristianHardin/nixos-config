@@ -9,7 +9,7 @@
       lib.mkEnableOption "enable steam-devices";
   };
 
-  config = lib.mkIf config.flatpak.enable {
+  config = lib.mkIf config.steam-devices.enable {
     services.udev.extraRules = ''
       # Valve USB devices
       SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", MODE="0660", TAG+="uaccess"
