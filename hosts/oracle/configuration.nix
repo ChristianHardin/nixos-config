@@ -8,9 +8,6 @@
     ./hardware-configuration.nix
   ];
 
-  steam-devices.enable = true;
-  umu-launcher.enable = true;
-
   nix.settings.experimental-features = ["nix-command" "flakes"];
   programs.nix-ld.enable = true; # tmp
   programs.gamemode.enable = true;
@@ -44,15 +41,23 @@
     loader.timeout = 0;
   };
 
-  networking.hostName = "oracle";
-  networking.networkmanager.enable = true;
-
   users.users.herman = {
     isNormalUser = true;
     description = "Herman";
     extraGroups = ["networkmanager" "wheel" "input" "gamemode"];
-    packages = with pkgs; []; # User packages in home
+    packages = with pkgs; [
+      alejandra
+    ]; # User packages in home
   };
+
+  # To Keep
+  flatpak.enable = true;
+  gnupg.enable = true;
+  steam-devices.enable = true;
+  umu-launcher.enable = true;
+
+  networking.hostName = "oracle";
+  networking.networkmanager.enable = true;
 
   system.stateVersion = "24.11";
 }

@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/master";
+    systems.url = "github:nix-systems/default-linux";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -23,43 +24,54 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
+    systems,
     home-manager,
-    alejandra,
     ...
-  } @ inputs: {
-    nixosConfigurations.oracle = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {
-        inherit self inputs;
-
-        pkgs = import nixpkgs {
-          system = "x86_64-linux";
+  } @ inputs: let
+    inherit (self) outputs;
+    lib = nixpkgs.lib // home-manager.lib;
+    forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
+    pkgsFor = lib.genAttrs (import systems) (
+      system:
+        import nixpkgs {
+          inherit system;
           config.allowUnfree = true;
-        };
+        }
+    );
+  in {
+    inherit lib;
+    formatter = forEachSystem (pkgs: pkgs.alejandra);
 
-        pkgs-unstable = import nixpkgs-unstable {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
+    nixosConfigurations = {
+      oracle = lib.nixosSystem {
+        specialArgs = {
+          inherit inputs outputs;
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+
+          pkgs-unstable = import nixpkgs-unstable {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
         };
+        modules = [
+          ./hosts/oracle/configuration.nix
+          ./nixosModules
+        ];
       };
-      modules = [
-        # Default Config
-        ./hosts/oracle/configuration.nix
-        ./nixosModules
+    };
 
-        # Home Manager
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.herman = import ./hosts/oracle/home.nix;
-        }
-
-        # Formatting
-        {
-          environment.systemPackages = [alejandra.defaultPackage."x86_64-linux"];
-        }
-      ];
+    homeConfigurations = {
+      "herman@oracle" = lib.homeManagerConfiguration {
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home/herman/oracle.nix
+          ./homeManagerModules
+        ];
+      };
     };
   };
 }

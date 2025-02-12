@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  imports = [../../homeManagerModules];
+  imports = [];
 
   nixpkgs = {
     config = {
