@@ -11,11 +11,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    alejandra = {
-      url = "github:kamadorueda/alejandra/3.1.0";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
     # Testing
     umu.url = "github:Open-Wine-Components/umu-launcher?dir=packaging/nix";
   };
@@ -40,7 +35,6 @@
     );
   in {
     inherit lib;
-    formatter = forEachSystem (pkgs: pkgs.alejandra);
 
     nixosConfigurations = {
       oracle = lib.nixosSystem {
