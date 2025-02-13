@@ -18,7 +18,6 @@
     packages = with pkgs; [
       scanmem
       devenv
-      pkgs-unstable.ladybird
     ];
   };
 
