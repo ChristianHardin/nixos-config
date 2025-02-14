@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./fonts
-    ./programs
     ./virtualization
   ];
 
