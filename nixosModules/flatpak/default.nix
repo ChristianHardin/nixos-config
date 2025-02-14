@@ -11,6 +11,7 @@
     "org.mozilla.firefox"
     "com.valvesoftware.Steam"
     "org.freedesktop.Platform.VulkanLayer.gamescope//24.08"
+    "org.freedesktop.Platform.VulkanLayer.gamescope//23.08"
     "org.freedesktop.Platform.VulkanLayer.vkBasalt//24.08"
     "org.freedesktop.Platform.VulkanLayer.MangoHud//24.08"
     "com.obsproject.Studio.Plugin.OBSVkCapture"
