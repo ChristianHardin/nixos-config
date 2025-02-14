@@ -18,6 +18,7 @@
     packages = with pkgs; [
       scanmem
       devenv
+      (import ./script.nix {inherit pkgs;})
     ];
   };
 
