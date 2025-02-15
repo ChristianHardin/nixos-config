@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    nil
     lua-language-server
     svelte-language-server
     emmet-language-server
@@ -27,6 +26,7 @@
       undotree # TODO KEYMAP <leader>u
       plenary-nvim
       friendly-snippets
+      blink-cmp
 
       {
         plugin = kanagawa-nvim;
