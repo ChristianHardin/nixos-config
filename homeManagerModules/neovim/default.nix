@@ -3,6 +3,7 @@
     nil
     lua-language-server
     svelte-language-server
+    emmet-language-server
   ];
 
   programs.neovim = let
