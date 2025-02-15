@@ -60,6 +60,8 @@
           p.tree-sitter-bash
           p.tree-sitter-lua
           p.tree-sitter-svelte
+          p.tree-sitter-html
+          p.tree-sitter-javascript
         ]);
         config = toLuaFile ./plugins/treesitter.lua;
       }
