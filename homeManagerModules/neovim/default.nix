@@ -25,8 +25,6 @@
       telescope-fzf-native-nvim
       undotree # TODO KEYMAP <leader>u
       plenary-nvim
-      friendly-snippets
-      blink-cmp
 
       {
         plugin = kanagawa-nvim;
@@ -76,9 +74,15 @@
         config = toLuaFile ./plugins/lsp.lua;
       }
 
+      nvim-cmp
+      luasnip
+      cmp_luasnip
+      cmp-nvim-lsp
+      friendly-snippets
+
       {
-        plugin = blink-cmp;
-        config = toLuaFile ./plugins/blink.lua;
+        plugin = nvim-cmp;
+        config = toLuaFile ./plugins/cmp.lua;
       }
 
       {
