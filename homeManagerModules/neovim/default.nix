@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     nil
     lua-language-server
+    svelte-language-server
   ];
 
   programs.neovim = let
@@ -57,6 +58,7 @@
           p.tree-sitter-vim
           p.tree-sitter-bash
           p.tree-sitter-lua
+          p.tree-sitter-svelte
         ]);
         config = toLuaFile ./plugins/treesitter.lua;
       }

@@ -2,8 +2,9 @@ config = function()
   local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 	-- LSP (Downloaded in ../default.nix)
-  require("lspconfig").lua_ls.setup { capabilities = capabilities }
+  require('lspconfig').lua_ls.setup { capabilities = capabilities }
 	require('lspconfig').nil_ls.setup { capabilities = capabilities }
+	require('lspconfig').svelte.setup { capabilities = capabilities }
 
   vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)
