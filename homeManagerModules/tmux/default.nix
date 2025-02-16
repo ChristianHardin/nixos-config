@@ -12,6 +12,7 @@
   config = lib.mkIf config.tmux.enable {
     programs.tmux = {
       enable = true;
+      prefix = "C-a";
       clock24 = true;
       historyLimit = 100000;
 
