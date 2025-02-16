@@ -39,7 +39,7 @@
 
         {
           plugin = kanagawa-nvim;
-          config = "colorscheme kanagawa-wave";
+          config = "colorscheme kanagawa";
         }
 
         {
