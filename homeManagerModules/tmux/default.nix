@@ -12,7 +12,7 @@
   config = lib.mkIf config.tmux.enable {
     programs.tmux = {
       enable = true;
-      shell = "\${pkgs.bash}/bin/bash";
+      shell = "/bin/bash";
       clock24 = true;
       keyMode = "vi";
       mouse = true;
