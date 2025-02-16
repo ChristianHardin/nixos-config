@@ -14,6 +14,8 @@
       lua-language-server
       svelte-language-server
       emmet-language-server
+      typescript
+      typescript-language-server
     ];
 
     programs.neovim = let
@@ -71,6 +73,7 @@
             p.tree-sitter-svelte
             p.tree-sitter-html
             p.tree-sitter-javascript
+            p.tree-sitter-typescript
           ]);
           config = toLuaFile ./plugins/treesitter.lua;
         }
