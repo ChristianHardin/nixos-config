@@ -16,7 +16,7 @@
       clock24 = true;
       keyMode = "vi";
       mouse = true;
-      terminal = "tmux-256color";
+      terminal = "screen-256color";
       historyLimit = 100000;
       plugins = with pkgs; [];
     };
