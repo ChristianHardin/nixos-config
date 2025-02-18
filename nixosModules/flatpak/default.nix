@@ -24,6 +24,7 @@
     "com.github.Matoking.protontricks"
     "org.gimp.GIMP"
     "org.kde.okular"
+    "com.bitwarden.desktop"
   ];
 in {
   options = {
