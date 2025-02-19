@@ -17,6 +17,7 @@
       terminal = "xterm-256color";
       clock24 = true;
       historyLimit = 100000;
+      mouse = true;
 
       plugins = with pkgs; [];
 

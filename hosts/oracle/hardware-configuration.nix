@@ -35,19 +35,13 @@
   fileSystems."/blue" = {
     device = "/dev/disk/by-uuid/46D46DE4D46DD729";
     fsType = "ntfs-3g";
-    options = ["x-systemd.automount" "noauto" "nofail" "rw" "UID=1000"];
+    options = ["nofail"];
   };
 
   fileSystems."/windows" = {
     device = "/dev/disk/by-uuid/E82C07C82C0790AC";
     fsType = "ntfs-3g";
-    options = ["x-systemd.automount" "noauto" "nofail" "rw" "UID=1000"];
-  };
-
-  fileSystems."/Exodus" = {
-    device = "192.168.10.52:/mnt/Temporary/Exodus";
-    fsType = "nfs";
-    options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=1800" "nofail"];
+    options = ["nofail"];
   };
 
   swapDevices = [
