@@ -43,11 +43,6 @@
     options = ["rw" "uid=1000"];
   };
 
-  fileSystems."/archive" = {
-    device = "/dev/archive/archive";
-    fsType = "ext4";
-  };
-
   swapDevices = [
     {device = "/dev/disk/by-uuid/4410a971-bb89-4ae7-a0dc-e59ef163006b";}
   ];
