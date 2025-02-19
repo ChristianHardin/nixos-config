@@ -18,7 +18,6 @@
     packages = with pkgs; [
       scanmem
       devenv
-      nfs-utils
       (import ./rebuild.nix {inherit pkgs;})
       (import ./rebuild-home.nix {inherit pkgs;})
     ];
