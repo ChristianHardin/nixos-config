@@ -29,19 +29,19 @@
   fileSystems."/steamlibrary" = {
     device = "/dev/disk/by-uuid/6a6170ab-7481-4e33-9477-f5cd5e58c2db";
     fsType = "ext4";
-    options = ["x-systemd.automount" "noauto" "nofail"];
+    options = ["x-systemd.automount" "noauto" "nofail" "rw" "UID=1000"];
   };
 
   fileSystems."/blue" = {
     device = "/dev/disk/by-uuid/46D46DE4D46DD729";
     fsType = "ntfs-3g";
-    options = ["x-systemd.automount" "noauto" "nofail"];
+    options = ["x-systemd.automount" "noauto" "nofail" "rw" "UID=1000"];
   };
 
   fileSystems."/windows" = {
     device = "/dev/disk/by-uuid/E82C07C82C0790AC";
     fsType = "ntfs-3g";
-    options = ["x-systemd.automount" "noauto" "nofail"];
+    options = ["x-systemd.automount" "noauto" "nofail" "rw" "UID=1000"];
   };
 
   fileSystems."/Exodus" = {
