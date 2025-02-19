@@ -29,24 +29,25 @@
   fileSystems."/steamlibrary" = {
     device = "/dev/disk/by-uuid/6a6170ab-7481-4e33-9477-f5cd5e58c2db";
     fsType = "ext4";
+    options = ["x-systemd.automount" "noauto" "nofail"];
   };
 
   fileSystems."/blue" = {
     device = "/dev/disk/by-uuid/46D46DE4D46DD729";
     fsType = "ntfs-3g";
-    options = ["rw" "uid=1000"];
+    options = ["x-systemd.automount" "noauto" "nofail"];
   };
 
   fileSystems."/windows" = {
     device = "/dev/disk/by-uuid/E82C07C82C0790AC";
     fsType = "ntfs-3g";
-    options = ["rw" "uid=1000"];
+    options = ["x-systemd.automount" "noauto" "nofail"];
   };
 
   fileSystems."/Exodus" = {
     device = "192.168.10.52:/mnt/Temporary/Exodus";
     fsType = "nfs";
-    options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=1800"];
+    options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=1800" "nofail"];
   };
 
   swapDevices = [
