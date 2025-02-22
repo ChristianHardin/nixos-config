@@ -18,7 +18,10 @@
       clock24 = true;
       historyLimit = 100000;
 
-      plugins = with pkgs; [tmuxPlugins.better-mouse-mode];
+      plugins = with pkgs; [
+        tmuxPlugins.better-mouse-mode
+        tmuxPlugins.yank
+      ];
 
       extraConfig = ''
         # https://old.reddit.com/r/tmux/comments/mesrci/tmux_2_doesnt_seem_to_use_256_colors/

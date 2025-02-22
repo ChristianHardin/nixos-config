@@ -16,6 +16,7 @@
       emmet-language-server
       typescript
       typescript-language-server
+      pyright
     ];
 
     programs.neovim = let
@@ -89,6 +90,7 @@
         }
 
         nvim-cmp
+        cmp-path
         luasnip
         cmp_luasnip
         cmp-nvim-lsp
