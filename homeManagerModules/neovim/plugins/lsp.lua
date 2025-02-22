@@ -44,5 +44,11 @@ require('lspconfig').lua_ls.setup {
 require('lspconfig').lua_ls.setup { capabilities = capabilities }
 require('lspconfig').svelte.setup { capabilities = capabilities }
 require('lspconfig').emmet_language_server.setup { capabilities = capabilities }
-require('lspconfig').ts_ls.setup { capabilities = capabilities }
+-- require('lspconfig').ts_ls.setup { capabilities = capabilities }
 require('lspconfig').pyright.setup { capabilities=capabilities }
+
+-- vscode-langserver-extracted
+require('lspconfig').cssls.setup { capabilities = capabilities }
+require('lspconfig').html.setup { capabilities = capabilities }
+require('lspconfig').jsonls.setup { capabilities = capabilities }
+require('lspconfig').eslint.setup { capabilities = capabilities }

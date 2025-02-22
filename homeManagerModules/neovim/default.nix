@@ -13,10 +13,11 @@
     home.packages = with pkgs; [
       lua-language-server
       svelte-language-server
+      # typescript
+      # typescript-language-server
       emmet-language-server
-      typescript
-      typescript-language-server
       pyright
+      vscode-langservers-extracted
     ];
 
     programs.neovim = let
