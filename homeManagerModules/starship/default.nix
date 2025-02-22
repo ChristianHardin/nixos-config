@@ -24,6 +24,8 @@
       };
     };
 
-    programs.bash.bashrcExtra = ''eval "$(starship init bash)"'';
+    programs.bash.bashrcExtra = lib.mkIf (config.bash.enable) ''eval "$(starship init bash)"'';
+
+    programs.zsh.initExtraFirst = lib.mkIf (config.zsh.enable) ''eval "$(starship init bash)"'';
   };
 }
