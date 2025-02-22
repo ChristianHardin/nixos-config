@@ -1,6 +1,6 @@
 {pkgs}:
 pkgs.writeShellScriptBin "rebuild" ''
-   set -e
+  set -e
   HOSTNAME=$(hostname)
 
    Help()
