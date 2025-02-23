@@ -47,6 +47,7 @@
     extraGroups = ["networkmanager" "wheel" "input" "gamemode"];
     packages = with pkgs; [
       alejandra
+      nfs-utils
     ]; # User packages in home
   };
 
