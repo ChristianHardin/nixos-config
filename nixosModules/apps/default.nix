@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./fonts
-    ./virtualization
   ];
 
   # Allow unfree packages

@@ -5,16 +5,7 @@
   ...
 }: {
   imports = [
-    ./neovim
-    ./tmux
-    ./starship
-    ./bash
-    ./zsh
+    ./programs
+    ./services
   ];
-
-  neovim.enable = lib.mkDefault false;
-  tmux.enable = lib.mkDefault false;
-  starship.enable = lib.mkDefault false;
-  bash.enable = lib.mkDefault true;
-  zsh.enable = lib.mkDefault false;
 }
