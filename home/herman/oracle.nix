@@ -17,7 +17,7 @@
     homeDirectory = "/home/herman";
     packages = with pkgs; [
       scanmem
-      devenv
+      pkgs-unstable.devenv
       (import ./rebuild.nix {inherit pkgs;})
     ];
   };
