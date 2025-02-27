@@ -8,7 +8,7 @@
   imports = [(modulesPath + "/installer/scan/not-detected.nix")];
 
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod"];
-  boot.initrd.kernelModules = ["dm-snapshot"];
+  boot.initrd.kernelModules = ["dm-snapshot" "amdgpu"];
   boot.kernelModules = ["kvm-amd" "zenpower"];
   boot.extraModulePackages = [config.boot.kernelPackages.zenpower];
   boot.kernelParams = ["amd_pstate=active"];
@@ -52,37 +52,31 @@
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   # AMD GPU
-  services.xserver.videoDrivers = lib.mkDefault ["modesetting"];
+  services.xserver.enable = true;
+  services.xserver.videoDrivers = ["amdgpu"];
+
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  ];
+
+  hardware.opengl.extraPackages = with pkgs; [
+    rocmPackages.clr.icd
+    amdvlk
+  ];
+
+  # For 32 bit applications
+  hardware.opengl.extraPackages32 = with pkgs; [
+    driversi686Linux.amdvlk
+  ];
+
+  environment.systemPackages = with pkgs; [
+    clinfo
+  ];
 
   hardware.graphics = {
     enable = lib.mkDefault true;
     enable32Bit = lib.mkDefault true;
   };
-
-  hardware.amdgpu.initrd.enable = lib.mkDefault true;
-
-  systemd.tmpfiles.rules = let
-    rocmEnv = pkgs.symlinkJoin {
-      name = "rocm-combined";
-      paths = with pkgs.rocmPackages; [
-        rocblas
-        hipblas
-        clr
-      ];
-    };
-  in [
-    "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
-  ];
-
-  hardware.graphics.extraPackages = with pkgs; [
-    rocmPackages.clr.icd
-    amdvlk
-    driversi686Linux.amdvlk
-  ];
-
-  environment.systemPackages = with pkgs; [lact clinfo];
-  systemd.packages = with pkgs; [lact];
-  systemd.services.lactd.wantedBy = ["multi-user.target"];
 
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
