@@ -44,7 +44,7 @@
   users.users.herman = {
     isNormalUser = true;
     description = "Herman";
-    extraGroups = ["networkmanager" "wheel" "input" "gamemode"];
+    extraGroups = ["networkmanager" "wheel" "input" "gamemode" "video" "render"];
     packages = with pkgs; [
       alejandra
       nfs-utils
