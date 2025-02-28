@@ -8,7 +8,6 @@
 
   # 1. Declare the Flatpaks you *want* on your system
   desiredFlatpaks = [
-    "org.mozilla.firefox"
     "com.valvesoftware.Steam"
     "org.freedesktop.Platform.VulkanLayer.gamescope//24.08"
     "org.freedesktop.Platform.VulkanLayer.gamescope//23.08"
@@ -25,6 +24,7 @@
     "org.gimp.GIMP"
     "org.kde.okular"
     "com.bitwarden.desktop"
+    "io.gitlab.librewolf-community"
   ];
 in {
   options = {
