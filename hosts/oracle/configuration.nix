@@ -56,7 +56,7 @@
   gnupg.enable = true;
   steam-devices.enable = true;
   umu-launcher.enable = true;
-  podman.enable = true;
+  docker.enable = true;
 
   networking.hostName = "oracle";
   networking.networkmanager.enable = true;
