@@ -16,7 +16,11 @@
     username = "herman";
     homeDirectory = "/home/herman";
     packages = with pkgs; [
+      alejandra
+      nfs-utils
       scanmem
+
+      protonvpn-gui
       pkgs-unstable.devenv
       (import ./rebuild.nix {inherit pkgs;})
     ];

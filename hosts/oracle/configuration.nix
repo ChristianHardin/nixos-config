@@ -46,8 +46,6 @@
     description = "Herman";
     extraGroups = ["networkmanager" "wheel" "input" "gamemode" "video" "render"];
     packages = with pkgs; [
-      alejandra
-      nfs-utils
     ]; # User packages in home
   };
 
