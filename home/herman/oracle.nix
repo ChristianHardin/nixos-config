@@ -20,7 +20,6 @@
       nfs-utils
       scanmem
 
-      protonvpn-gui
       pkgs-unstable.devenv
       (import ./rebuild.nix {inherit pkgs;})
     ];
