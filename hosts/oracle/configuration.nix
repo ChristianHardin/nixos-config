@@ -55,6 +55,7 @@
   steam-devices.enable = true;
   umu-launcher.enable = true;
   docker.enable = true;
+  kdeconnect.enable = true;
 
   networking.hostName = "oracle";
   networking.networkmanager.enable = true;
