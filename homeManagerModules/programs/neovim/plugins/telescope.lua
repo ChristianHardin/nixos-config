@@ -41,5 +41,5 @@ vim.keymap.set("n", "<space>en", function()
   }
 
 local multigrep = require("./multigrep.lua")
-require "multigrep".setup()
+multigrep.setup()
 end)
