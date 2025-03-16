@@ -40,5 +40,6 @@ vim.keymap.set("n", "<space>en", function()
     cwd = "/etc/nixos/"
   }
 
-require "./multigrep.lua".setup()
+local multigrep = require("./multigrep.lua")
+require "multigrep".setup()
 end)
