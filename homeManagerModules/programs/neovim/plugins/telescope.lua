@@ -40,5 +40,5 @@ vim.keymap.set("n", "<space>en", function()
     cwd = "/etc/nixos/"
   }
 
-require "config.telescope.multigrep".setup()
+require "./multigrep.lua".setup()
 end)
