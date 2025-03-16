@@ -39,4 +39,6 @@ vim.keymap.set("n", "<space>en", function()
     hidden = true,
     cwd = "/etc/nixos/"
   }
+
+require "config.telescope.multigrep".setup()
 end)
