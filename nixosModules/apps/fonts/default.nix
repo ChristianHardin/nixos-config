@@ -1,5 +1,5 @@
-{pkgs-unstable, ...}: {
-  fonts.packages = with pkgs-unstable; [
+{pkgs, ...}: {
+  fonts.packages = with pkgs; [
     nerd-fonts.fira-code
   ];
 }

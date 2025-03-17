@@ -2,12 +2,11 @@
   description = "Nixos Configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     systems.url = "github:nix-systems/default-linux";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -18,7 +17,6 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-unstable,
     systems,
     home-manager,
     ...
@@ -44,11 +42,6 @@
             system = "x86_64-linux";
             config.allowUnfree = true;
           };
-
-          pkgs-unstable = import nixpkgs-unstable {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
         };
         modules = [
           ./hosts/oracle/configuration.nix
@@ -64,11 +57,6 @@
           inherit inputs outputs;
 
           pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
-
-          pkgs-unstable = import nixpkgs-unstable {
             system = "x86_64-linux";
             config.allowUnfree = true;
           };

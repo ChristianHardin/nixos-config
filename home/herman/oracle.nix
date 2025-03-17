@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   ...
 }: {
   imports = [];
@@ -19,8 +18,8 @@
       alejandra
       nfs-utils
       scanmem
+      devenv
 
-      pkgs-unstable.devenv
       (import ./rebuild.nix {inherit pkgs;})
     ];
   };

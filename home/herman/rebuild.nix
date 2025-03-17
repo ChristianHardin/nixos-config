@@ -20,7 +20,7 @@ pkgs.writeShellScriptBin "rebuild" ''
    	pushd /etc/nixos/
    	git diff -U0 *.nix
 
-   	echo "NixosOs Rebuilding..."
+   	echo "Nixos Rebuilding..."
    	sudo nixos-rebuild switch &>nixos-switch.log ||
    		(cat nixos-switch.log | grep --color error && false)
    	gen=$(nixos-rebuild list-generations | grep current)
