@@ -18,6 +18,7 @@
       emmet-language-server
       pyright
       vscode-langservers-extracted
+      clang
     ];
 
     programs.neovim = let
