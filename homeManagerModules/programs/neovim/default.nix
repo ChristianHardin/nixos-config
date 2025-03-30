@@ -19,6 +19,7 @@
       pyright
       vscode-langservers-extracted
       clang
+      clang-tools
     ];
 
     programs.neovim = let
